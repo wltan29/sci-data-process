@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scidata"
+version = "0.1.0"
+description = "Shared filesystem/data helpers for synchrotron XRD processing scripts"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE"]
+
+# scidata itself only uses the standard library. The scientific stack needed by
+# the scripts under data_processing_*/, cryostat_height_calibration/ and
+# instrument_control/ is listed in requirements.txt.
+
+[tool.setuptools.packages.find]
+where = ["src"]

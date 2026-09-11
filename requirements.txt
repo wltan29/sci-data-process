@@ -1,0 +1,23 @@
+# Runtime dependencies for the data-processing scripts.
+#   python -m venv .venv && source .venv/bin/activate
+#   pip install -r requirements.txt
+#   pip install -e .          # puts the local `scidata` package on the path
+
+numpy
+scipy
+pandas
+matplotlib
+pillow
+
+# pandas Excel writers used by image_stats_to_excel.py (xlsxwriter) and
+# mda-gaussian_fit_pipeline.py (openpyxl)
+openpyxl
+xlsxwriter
+
+# Notebook only: data_processing_2d/simulate_calibrant_image.ipynb
+# Heavy dependency; usually installed via conda (conda install -c conda-forge pyfai)
+pyFAI
+
+# Beamline control scripts under instrument_control/ also need pyepics
+# (pip install pyepics), but they only do anything on the beamline network
+# against a live EPICS IOC. See instrument_control/ for details.
